@@ -1,5 +1,5 @@
 package Prime_Number;
-
+// Why the prime check upto √n and why nott check upto n
 public class Why_upto_squreroot_n {
     public static void main(String[] args) {
         int num = 1_000_003; // You can try larger numbers too

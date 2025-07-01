@@ -1,5 +1,5 @@
 package Prime_Number;
-
+// Finding the Prime number or not
 public class Find_the_Prime {
     public static void main(String[] args) {
         int n = 20; // Set the upper limit to check for prime numbers

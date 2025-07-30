@@ -52,5 +52,68 @@ public class Array_basic {
             str[i]=in.next();
         }
         System.out.println("String elements to print : "+Arrays.toString(str));
+
+        //Swap the array
+        int[] arr1  = { 1,2,3,4,5};
+        swap(arr1,1,2);
+        System.out.println("swaped array : "+Arrays.toString(arr1));//output-> [1,3,2,4,5]
+
+        //Find the Max
+        System.out.println("The max value in the array : "+max(arr1));//output-> 5
+
+        //Find the Range in max
+        System.out.println("The range in array to find max : "+maxrange(arr1,0,3));//output-> 3
+
+        //reverse the array
+        Reverse(arr1);
+        System.out.println("the reversed array : "+Arrays.toString(arr1));
+    }
+    static void swap(int[] arr1,int index1,int index2){
+        int temp=arr1[index1];
+        arr1[index1]=arr1[index2];
+        arr1[index2]=temp;
+    }
+    static int max(int[] arr1){
+
+        if (arr1.length==0){// work on edge cases here ,like array being null
+            return -1;
+        }
+        int maxValue=arr1[0];
+        for (int i = 0; i < arr1.length; i++) {
+            if (arr1[i]>maxValue){
+                maxValue=arr1[i];
+            }
+        }
+        return maxValue;
+    }
+
+    static int maxrange(int[] arr1,int start,int end){
+
+        // Edge case : Invalid range
+        if (start < 0 || end > arr1.length || start >= end) {
+            return -1;
+        }
+        //edge case : array=null
+        if (arr1==null){// work on edge cases here ,like array being null
+            return -1;
+        }
+
+        int maxValue = arr1[start];
+        for (int i = start; i < end; i++) {
+            if (arr1[i]>maxValue){
+                maxValue=arr1[i];
+            }
+        }
+        return maxValue;
+    }
+
+    static void Reverse(int[] arr1){
+        int start=0;
+        int end=arr1.length-1;
+        while(start<end){
+            swap(arr1,start,end);
+            start++;
+            end--;
+        }
     }
 }
